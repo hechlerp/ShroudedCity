@@ -14,22 +14,7 @@
     <script type="application/javascript" src="vendor/keymaster.js"></script>
 
     <script src="lib/bundle.js"></script>
-    <script type="shader" id="fogShader">
-      precision mediump float;
-      uniform float time;
-      uniform float alpha;
 
-      varying vec2 vTextureCoord;//The coordinates of the current pixel
-      uniform sampler2D uSampler;//The image data
-
-      void main(void) {
-        gl_FragColor = texture2D(uSampler, vTextureCoord);
-        float fluctuation = sin(0.1 * (time / 10.0));
-        // if (fluctuation > 0.5) {
-          gl_FragColor = vec4(fluctuation * alpha,fluctuation * alpha,fluctuation * alpha,0.0);
-        // }
-      }
-    </script>
 </body>
 
 </html>
