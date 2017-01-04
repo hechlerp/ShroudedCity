@@ -13,7 +13,7 @@ Shrouded city is a 2D dungeon crawler built with [pixi.js][pixi_repo].
 
 ###Technical Details
 
-- Shrouded City keeps track of wall positions and the locations of rooms with matrices. A 2d array tracks the position of each wall segment and uses the player's position to key into the matrix and check for walls. By just using some basic math, the normal wall check works in constant time, and never checks whether the player is colliding with walls it's nowhere near.
+- Shrouded City keeps track of wall positions and the locations of rooms with matrices. A 2d array tracks the position of each wall segment and uses the player's position to key into the matrix and check for walls. By using some math, the normal wall check works in constant time, and never checks whether the player is colliding with walls outside of the part of the room the player occupies.
 
         fourCorners.push([
           Math.floor((object.x + object.hitBox.calcPoints[0].x) / object.game.currentRoom.wallSize),
