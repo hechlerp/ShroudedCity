@@ -48,11 +48,11 @@ for (let i = 0; i < fourCorners.length; i++) {
 ```
         
 
-  Any moving object that needs to check for wall collision is simply marked with the behavior "MovingObject", and then checks to see if its corners key into a wall segment every frame. If they do, only then does it check for collision. To do so, I'm using [this][https://github.com/jriecken/sat-js] Separating Axis Theorem library.
+Any moving object that needs to check for wall collision is simply marked with the behavior "MovingObject", and then checks to see if its corners key into a wall segment every frame. If they do, only then does it check for collision. To do so, I'm using [this][https://github.com/jriecken/sat-js] Separating Axis Theorem library.
 
 - Instead of using inheritance, many game objects have "behavior" objects attached to them to build objects through composition. For example, any object in the game that needs a health bar runs the HpObject's setup methods in its constructor (passing in itself), then adds HpObject to an array of behaviors. Every frame, it runs the update and render methods on each behavior in the array, which keeps the code clean and modular.
 
-  ```javascript
+```javascript
   render (object) {
     let height = (object.sprite.height > 50 ? object.sprite.height / 2 : object.sprite.height);
     object.healthBar.clear();
